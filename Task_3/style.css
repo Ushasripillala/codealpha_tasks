@@ -1,0 +1,180 @@
+/* Core Structural Variable Framework */
+:root {
+    --bg-main: #0b0c10;
+    --bg-card: #1f2833;
+    --accent-glow: #45f3ff;
+    --text-bright: #ffffff;
+    --text-dim: #c5a1ff;
+    --track-rail: #2c3540;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: radial-gradient(circle, #1a1a2e 0%, var(--bg-main) 100%);
+    color: var(--text-bright);
+    padding: 20px;
+}
+
+/* Audio Player Card Wrapper Layout */
+.player-container {
+    background: var(--bg-card);
+    width: 380px;
+    padding: 30px;
+    border-radius: 24px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Disc Rotation Cover Art Component */
+.track-artwork {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.art-disc {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3.5rem;
+    border: 4px solid var(--accent-glow);
+    box-shadow: 0 0 15px rgba(69, 243, 255, 0.2);
+    animation: spin 12s linear infinite;
+    animation-play-state: paused;
+}
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
+
+/* Metadata Text Positioning */
+.track-details h2 {
+    font-size: 1.5rem;
+    margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.track-details h3 {
+    font-size: 1rem;
+    color: var(--text-dim);
+    margin-bottom: 25px;
+    font-weight: 400;
+}
+
+/* Timeline Custom Inputs Customizations */
+.timeline-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    font-size: 0.85rem;
+    margin-bottom: 25px;
+}
+
+#progress-bar, #volume-slider {
+    flex: 1;
+    height: 6px;
+    border-radius: 4px;
+    background: var(--track-rail);
+    outline: none;
+    cursor: pointer;
+    accent-color: var(--accent-glow);
+}
+
+/* Action Control Blocks Layouts */
+.control-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.action-btn {
+    background: none;
+    border: none;
+    color: var(--text-bright);
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: transform 0.2s, color 0.2s;
+}
+
+.action-btn:hover {
+    color: var(--accent-glow);
+    transform: scale(1.1);
+}
+
+.play-main {
+    font-size: 2.8rem;
+}
+
+/* Volume Sub-System */
+.volume-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 70%;
+    margin: 0 auto 25px auto;
+    font-size: 0.9rem;
+}
+
+/* Interactive Queue Interface */
+.playlist-panel {
+    text-align: left;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 15px;
+}
+
+.playlist-panel h4 {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#playlist-queue {
+    list-style: none;
+    max-height: 110px;
+    overflow-y: auto;
+}
+
+#playlist-queue li {
+    padding: 8px 12px;
+    border-radius: 8px;
+    margin-bottom: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: background 0.2s;
+}
+
+#playlist-queue li:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+#playlist-queue li.active-track {
+    background: rgba(69, 243, 255, 0.15);
+    color: var(--accent-glow);
+    font-weight: 600;
+}

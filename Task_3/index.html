@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeAlpha Task 4 - Music Player</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="player-container">
+        <audio id="audio-element" src=""></audio>
+
+        <div class="track-artwork">
+            <div id="art-placeholder" class="art-disc">🎵</div>
+        </div>
+        
+        <div class="track-details">
+            <h2 id="track-title">Song Title</h2>
+            <h3 id="track-artist">Artist Name</h3>
+        </div>
+
+        <div class="timeline-container">
+            <span id="current-time">0:00</span>
+            <input type="range" id="progress-bar" min="0" max="100" value="0">
+            <span id="total-duration">0:00</span>
+        </div>
+
+        <div class="control-actions">
+            <button id="btn-prev" class="action-btn" onclick="previousTrack()">⏮</button>
+            <button id="btn-play" class="action-btn play-main" onclick="togglePlayback()">▶</button>
+            <button id="btn-next" class="action-btn" onclick="nextTrack()">⏭</button>
+        </div>
+
+        <div class="volume-container">
+            <span>🔈</span>
+            <input type="range" id="volume-slider" min="0" max="1" step="0.05" value="0.7" oninput="adjustVolume()">
+            <span>🔊</span>
+        </div>
+
+        <div class="playlist-panel">
+            <h4>Track Queue</h4>
+            <ul id="playlist-queue">
+                </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
