@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeAlpha - Interactive Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="calculator-container">
+        <input type="text" id="display" class="display-screen" value="0" readonly>
+
+        <div class="button-grid">
+            <button class="btn-control" onclick="clearDisplay()">AC</button>
+            <button class="btn-control" onclick="deleteLast()">DEL</button>
+            <button class="btn-number" onclick="appendValue('%')">%</button>
+            <button class="btn-operator" onclick="appendValue('/')">&divide;</button>
+
+            <button class="btn-number" onclick="appendValue('7')">7</button>
+            <button class="btn-number" onclick="appendValue('8')">8</button>
+            <button class="btn-number" onclick="appendValue('9')">9</button>
+            <button class="btn-operator" onclick="appendValue('*')">&times;</button>
+
+            <button class="btn-number" onclick="appendValue('4')">4</button>
+            <button class="btn-number" onclick="appendValue('5')">5</button>
+            <button class="btn-number" onclick="appendValue('6')">6</button>
+            <button class="btn-operator" onclick="appendValue('-')">&minus;</button>
+
+            <button class="btn-number" onclick="appendValue('1')">1</button>
+            <button class="btn-number" onclick="appendValue('2')">2</button>
+            <button class="btn-number" onclick="appendValue('3')">3</button>
+            <button class="btn-operator" onclick="appendValue('+')">+</button>
+
+            <button class="btn-number" onclick="appendValue('0')" class="zero-btn">0</button>
+            <button class="btn-number" onclick="appendValue('.')">.</button>
+            <button class="btn-equals" onclick="calculateResult()">=</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
